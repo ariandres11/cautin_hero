@@ -3,15 +3,16 @@ using System.Collections.Generic;
 
 public class Forma: MonoBehaviour
 {
+    public GameObject panelErrar;
+    public GameObject panelAcertar;
     public TipoForma tipo;
-    public float tiempoVida = 2.0f; 
+    //TODO: variar por nivel
+    public float tiempoVida = 5.0f;
 
     [Header("Referencias")]
     public GameObject formaVacia;
     public GameObject formaLlena;
-
     public static List<Forma> formasActivas = new List<Forma>();
-
     private bool golpeada = false;
 
     void OnEnable()
@@ -35,6 +36,9 @@ public class Forma: MonoBehaviour
     {
             if (!golpeada)
             {
+                Debug.Log("¡Fallo! Se escapó una figura de tipo " + tipo);
+                //panelErrar.SetActive(true);
+                GameManager.instancia.RegistrarFallo(); // Avisar que se perdió
                 //GameManager.instancia.RegistrarFallo(); // Avisar que se perdió
                 Destroy(gameObject); // Desaparecer
             }
@@ -50,10 +54,12 @@ public class Forma: MonoBehaviour
         // Feedback Visual
         formaVacia.SetActive(false);
         formaLlena.SetActive(true);
+        Debug.Log("¡Acertaste una forma de tipo " + tipo + "!");
+        //panelAcertar.SetActive(true);
+        GameManager.instancia.SumarPuntos();
 
         //GameManager.instancia.SumarPuntos();
 
-        // Esperar 0.2s para que se vea el relleno y luego destruir
-        Destroy(gameObject, 0.2f);
+        Destroy(gameObject, 0.4f);
     }
 }
