@@ -85,6 +85,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4168913901395789010}
+  - component: {fileID: 4539984094781009202}
   m_Layer: 5
   m_Name: Forma
   m_TagString: Untagged
@@ -114,6 +115,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4539984094781009202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3720508282376332768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccebc3e387c07cd47a12bfee7efcdf99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipo: 0
+  tiempoVida: 2
+  formaVacia: {fileID: 7172437115956249774}
+  formaLlena: {fileID: 3298615273046950710}
 --- !u!1 &7172437115956249774
 GameObject:
   m_ObjectHideFlags: 0
